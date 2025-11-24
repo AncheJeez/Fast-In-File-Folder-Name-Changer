@@ -78,12 +78,15 @@ int main(int argc, char *argv[]) {
 		char string[50];
         scanf("%s", word);
         int num =0;
+        printf("Size of the word you typed: %zu\n",strlen(word));
+        // lee palabra por palabra separada por espacios
 		while(fscanf(fptr,"%s", string) == 1){
-            if(strstr(string, word)!="$") {
+            if(strstr(string, word)!=0) {
                 num++;
             }
         }
-//        printf("I found the word %s in the file %d times\n",word,num );
+        printf("I found the word '%s' in the file %d times\n",word,num);
+        fclose(fptr);
 	}
 
 		
